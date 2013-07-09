@@ -1,0 +1,9 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (3.7ms)[0m  DROP DATABASE IF EXISTS `transaction_test3_test`
+  [1m[36m (0.1ms)[0m  [1mCREATE DATABASE `transaction_test3_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (6.2ms)[0m  CREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (8.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130709050128')

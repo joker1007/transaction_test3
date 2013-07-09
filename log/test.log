@@ -1,0 +1,20 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  select table_name from information_schema.views where table_schema = 'transaction_test3_test'
+  [1m[36m (5.7ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `posts` [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `posts` (`created_at`, `title`, `updated_at`) VALUES ('2013-07-09 05:07:08', 'title0', '2013-07-09 05:07:08')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`created_at`, `title`, `updated_at`) VALUES ('2013-07-09 05:07:08', 'title1', '2013-07-09 05:07:08')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `posts` (`created_at`, `title`, `updated_at`) VALUES ('2013-07-09 05:07:08', 'title2', '2013-07-09 05:07:08')[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `posts` [0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
